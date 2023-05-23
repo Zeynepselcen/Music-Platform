@@ -12,9 +12,10 @@ body{
     font-family:"Poppins",sans-serif;
     width: 100%;
     height: 100vh;
-    background:#5e5e8c;
-    display: grid;
-    place-items: center;
+    background-color:#9b8f8d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 }
 
@@ -31,27 +32,27 @@ header{
 header.menu_side,
 .song_side{
 
-    width: 70%;
+    width: 25%;
     height: 90%;
    /* border: 1px solid whitesmoke;*/
-    background:#864663;
+    background:#6c0c0c;
     box-shadow: 5px 0px 2px rgb(12, 49, 2);
-    color: beige;
+    color: rgb(255, 255, 255);
+    position: relative;
 
 }
 
-header .menu_side{
+header .song_side{
 
-    width: 30%;
-    height: 90%;
-    background: white;
+    width: 75%;
+    background: rgb(59, 1, 1);
 }
 
 header .master_play{
     width: 100%;
     height: 10%;
-    border: 1px solid whitesmoke;
-    box-shadow: 0px 3px 8px rgb(136, 65, 65);
+   /* border: 1px solid whitesmoke;*/
+    box-shadow: 0px 3px 8px #090f1f;
 }
 
 
@@ -65,7 +66,7 @@ header .menu_side h2{
 
 header .menu_side .playlist{
 
-    margin: 20px 0px 0px 20px;
+    margin: 40px 0px 0px 20px;
 
 }
 
@@ -158,7 +159,7 @@ header .menu_side .menu_song li{
 }
 header .menu_side .menu_song li:hover {
 
-    background: rgb(18, 8, 8);
+    background: rgb(135, 52, 52);
 }
 
 header .menu_side .menu_song li span{
@@ -402,7 +403,7 @@ header .master_play .bar .bar2{
 
     position: absolute;
     background-color: aqua;
-    width: 50%;
+    width: 100%;
     height: 100%;
     top: 0;
     transition: 1s linear;
@@ -481,7 +482,7 @@ header .master_play .vol .vol_bar{
 
     position: absolute;
     background: aqua;
-    width: 100%;
+    width: 50%;
     height: 100%;
     top: 0;
     transition: 1s linear;
@@ -490,25 +491,26 @@ header .master_play .vol .vol_bar{
 
 header .master_play .vol .dot{
     
-    content: '';
     position: absolute;
-    width: 5px;
+    width:10%;
     height: 5px;
-    border: 1px solid aqua;
+    background: aqua;
     border-radius: 50%;
-    left: 100%;
+    left: 0%;
     top: -1.5px;
     transition: 1s linear;
-    box-shadow: inset 0px 0px 3px aqua;
+  
 
 }
 
-header .song_side::before{
+
+header .song_side::before {
     content: '';
     position: absolute;
     width: 100%;
     height: 300px;
     z-index: -1;
+    background: url('coldplay.png');
 }
 
 
@@ -610,7 +612,7 @@ header .song_side nav .user img{
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    box-shadow: 2px 2px 8px black;
+    box-shadow: 2px 2px 8px rgb(139, 91, 91);
 }
 
 header .song_side .content{
@@ -672,7 +674,7 @@ header .song_side .popular_song{
     height: auto;
     margin: auto;
     margin-top: 15px;
-    border: 1px solid white;
+    /*border: 1px solid white;*/
 }
 
 header .song_side .popular_song .h4{
