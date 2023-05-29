@@ -264,7 +264,7 @@ back.addEventListener('click', ()=>{
         index = Array.from(document.getElementsByClassName('songItem')).length;
     }
     music.src = `audio/${index}.mp3`;
-    poster_master_play.src =`img/${index}.jpg`;
+    poster_master_play.src =`img/${index}.jpeg`;
     music.play();
     let song_title = songs.filter((ele)=>{
         return ele.id == index;
