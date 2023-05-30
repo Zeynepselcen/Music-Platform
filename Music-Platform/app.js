@@ -1,4 +1,4 @@
-const music = new Audio('2.mp3');
+const music = new Audio('audio/9.mp3');
 
 // create Array 
 
@@ -24,7 +24,7 @@ const songs = [
     {
         id:"4",
         songName: `CANIN SAĞ OLSUN <br><div class="subtitle">Semicenk</div>`,
-        poster: "img/semicenk.jpg",
+        poster: "img/5.jpeg",
     },
     {
         id:"5",
@@ -83,12 +83,12 @@ const songs = [
     },
     {
         id:"16",
-        songName: `Bones <br><div class="subtitle"Imagine Dragons</div>`,
+        songName: `Bones <br><Imagine class="subtitle">Imagine Dragons</div>`,
         poster: "img/b.jpg",
     },
     {
         id:"17",
-        songName: `Thunder <br><div class="subtitle" Imagine Dragons></div>`,
+        songName: `Thunder <br><div class="subtitle">Imagine Dragons></div>`,
         poster: "img/ImagineDragons.jpg",
     },
     {
@@ -111,12 +111,117 @@ const songs = [
         songName: `Before You Go <br><div class="subtitle">Lewis Capaldi</div>`,
         poster: "img/lewis.jpg",
     },
+    {
+        id:"22",
+        songName: `Fırtınadayım <br><div class="subtitle">Mabel Matiz</div>`,
+        poster: "img/4.jpeg",
+    },
+    {
+        id:"28",
+        songName: `Nasır <br><div class="subtitle">Melike Şahin</div>`,
+        poster: "img/melikesahin.jpg",
+    },
+    {
+        id:"24",
+        songName: `Tutamıyorum Zamanı <br><div class="subtitle">Müslüm Gürses</div>`,
+        poster: "img/muslumgurses.jpg",
+    },
+    {
+        id:"25",
+        songName: `Son Arzum <br><div class="subtitle">Nilüfer</div>`,
+        poster: "img/nilü.jpg",
+    },
+    {
+        id:"26",
+        songName: `Hayır Olamaz <br><div class="subtitle">SeksenDört</div>`,
+        poster: "img/84.jpg",
+    },
+    {
+        id:"27",
+        songName: `Dansöz<br><div class="subtitle">Serdar Ortaç</div>`,
+        poster: "img/serdarortac.jpg",
+    },
+    {
+        id:"29",
+        songName: `Firuze<br><div class="subtitle">Sezen Aksu</div>`,
+        poster: "img/sezenaksu.jpg",
+    },
+    {
+        id:"30",
+        songName: `Kuzu Kuzu<br><div class="subtitle">Tarkan</div>`,
+        poster: "img/tarkan.jpg",
+    },
+    {
+        id:"31",
+        songName: `Cumhuriyet<br><div class="subtitle">Yalın</div>`,
+        poster: "img/yalın.jpg",
+    },
+    {
+        id:"32",
+        songName: `Ki Sen<br><div class="subtitle">Yalın</div>`,
+        poster: "img/yalın.jpg",
+    },
+    {
+        id:"33",
+        songName: `Kumralım<br><div class="subtitle">Yaşar</div>`,
+        poster: "img/yaşar.jpg",
+    },
+
 ]
 
 Array.from(document.getElementsByClassName('songItem')).forEach((element, i)=>{
     element.getElementsByTagName('img')[0].src = songs[i].poster;
     element.getElementsByTagName('h5')[0].innerHTML = songs[i].songName;
-})
+});
+ 
+  //search data start
+
+  let search_result=document.getElementsByClassName('search_result')[0];
+
+  songs.forEach(element => {
+    const { id, songName, poster}=element;
+    let card = document.createElement('a');
+    card.classList.add('card');
+    card.href ='#' + id;
+    card.innerHTML=`
+    <img src="${poster}" alt="">
+    <div class="content">
+       ${songName}
+    </div>
+    `;
+    search_result.appendChild(card);
+
+
+  });
+  let input =document.getElementsByTagName('input')[0];
+  input.addEventListener('keyup',()=>{
+    let input_value=input.value.toUpperCase();
+    let items = search_result.getElementsByTagName('a');
+
+    for(let i=0;i<items.length;i++){
+        let as =items[i].getElementsByClassName('content')[0];
+        let text_value =as.textContent || as.innerText;
+
+        if(text_value.toUpperCase().indexOf(input_value)> -1){
+            items[i].style.display="flex";
+
+        }else{
+            items[i].style.display="none";
+
+        }
+        if(input.value ==0){
+            search_result.style.display ="none";
+        }else{
+            search_result.style.display ="";
+
+        }
+    }
+
+   })
+
+
+
+  //search data end
 
 
 let masterPlay = document.getElementById('masterPlay');
@@ -152,6 +257,7 @@ const makeAllBackgrounds = () =>{
 let index = 0;
 let poster_master_play = document.getElementById('poster_master_play');
 let title = document.getElementById('title');
+
 Array.from(document.getElementsByClassName('playListPlay')).forEach((element)=>{
     element.addEventListener('click', (e)=>{
         index = e.target.id;
@@ -159,15 +265,16 @@ Array.from(document.getElementsByClassName('playListPlay')).forEach((element)=>{
         e.target.classList.remove('bi-play-circle-fill');
         e.target.classList.add('bi-pause-circle-fill');
         music.src = `audio/${index}.mp3`;
-        poster_master_play.src =`img/${index}.jpg`;
+        /*poster_master_play.src =`img/${index}.jpeg`;*/
         music.play();
         let song_title = songs.filter((ele)=>{
             return ele.id == index;
         })
 
         song_title.forEach(ele =>{
-            let {songName} = ele;
+            let {songName,poster} = ele;
             title.innerHTML = songName;
+            poster_master_play.src=poster;
         })
         masterPlay.classList.remove('bi-play-fill');
         masterPlay.classList.add('bi-pause-fill');
@@ -264,7 +371,7 @@ back.addEventListener('click', ()=>{
         index = Array.from(document.getElementsByClassName('songItem')).length;
     }
     music.src = `audio/${index}.mp3`;
-    poster_master_play.src =`img/${index}.jpeg`;
+    poster_master_play.src =`img/${index}.jpg`;
     music.play();
     let song_title = songs.filter((ele)=>{
         return ele.id == index;
