@@ -11,67 +11,67 @@
 
 <body>
 <header>
+   
     <div class="menu_side">
         <h1>♡SM CLOUD♡</h1>
         <div class="playlist">
             <h4 class="active"><span></span><i class="bi bi-music-note-beamed"></i> Playlist</h4>
-            <h4 ><span></span><i class="bi bi-music-note-beamed"></i> Last Listening</h4>
-            <h4 ><span></span><i class="bi bi-music-note-beamed"></i> Recommended</h4>
+            <h4 ><span></span><i class="bi bi-music-note-beamed"></i> Popular Songs</h4>
+            <h4 ><span></span><i class="bi bi-music-note-beamed"></i> Popular Artists</h4>
         </div>
         <div class="menu_song">
             <li class="songItem">
                 <span>01</span>
-                <img src="img/indir.jpeg" alt="Alan">
+                <img src="img/indir.jpeg" alt="guneş">
                 <h5>
                     NKBI
                     <div class="subtitle">Güneş</div>
                 </h5>
                     <i class="bi playListPlay bi-play-circle-fill" id="1"></i>
+                    <button type="button" class="bi bi-heart-pulse" onclick="openWindow('https://www.azlyrics.com/lyrics/gunes/nkbi.html')" ></button>
+                      
             </li>
+          
             <li class="songItem">
                 <span>02</span>
-                <img src="img/4.jpg" alt="Alan">
-                <h5>
-                    FIRTINDAYIM
-                    <div class="subtitle">Alan Mabel Matiz</div>
-                </h5>
-                    <i class="bi playListPlay bi-play-circle-fill" id="2"></i>
-            </li>
-            <li class="songItem">
-                <span>03</span>
-                <img src="img/6.jpeg" alt="Alan">
+                <img src="img/6.jpeg" alt="Madrigal">
                 <h5>
                     SENİ DERT ETMELER
                     <div class="subtitle">Madrigal</div>
                 </h5>
                     <i class="bi playListPlay bi-play-circle-fill" id="3"></i>
+                    <button type="button" class="bi bi-heart-pulse" onclick="openWindow('https://www.azlyrics.com/lyrics/deeperise/senidertetmeler.html')" ></button>
             </li>
             <li class="songItem">
-                <span>04</span>
-                <img src="img/5.jpeg" alt="Alan">
+                <span>03</span>
+                <img src="img/5.jpeg" alt="semicenk">
                 <h5>
                     CANIN SAĞOLSUN
                     <div class="subtitle">Semicenk</div>
                 </h5>
                     <i class="bi playListPlay bi-play-circle-fill" id="4"></i>
+                    <button type="button" class="bi bi-heart-pulse" onclick="openWindow('https://www.azlyrics.com/lyrics/semicenk/cannsagolsun.html')" ></button>
             </li>
             <li class="songItem">
-                <span>05</span>
-                <img src="img/1.jpg" alt="Alan">
+                <span>04</span>
+                <img src="img/1.jpg" alt="simge">
                 <h5>
                     AŞKIN OLAYIM
                     <div class="subtitle">Simge</div>
                 </h5>
                     <i class="bi playListPlay bi-play-circle-fill" id="5"></i>
+                    <button type="button" class="bi bi-heart-pulse" onclick="openWindow('https://www.azlyrics.com/lyrics/simge/aknolaym.html')" ></button>
             </li>
             <li class="songItem">
-                <span>06</span>
-                <img src="img/5.jpeg" alt="Alan">
+                <span>05</span>
+                <img src="img/5.jpeg" alt="semicenk">
                 <h5>
                     YANA YANA 
                     <div class="subtitle">Semicenk</div>
                 </h5>
-                    <i class="bi playListPlay bi-play-circle-fill" id="6"></i>
+                    <i class="bi playListPlay bi-play-circle-fill" id="6">
+
+                    </i><button type="button" class="bi bi-heart-pulse" onclick="openWindow('https://www.azlyrics.com/lyrics/semicenk/yanayana.html')" ></button>
             </li>
         </div>
     </div>
@@ -81,8 +81,11 @@
         <nav>
             <ul>
                 <li>Discover <span></span></li>
-                <li>MY LIBRARY</li>
-                <li>RADIO</li>
+               
+                <li>RADIO
+                 
+        
+                </li>
             </ul>
             <div class="search">
                 <i class="bi bi-search"></i>
@@ -115,7 +118,7 @@
         </div>
         <div class="popular_song">
             <div class="h4">
-                <h4>Popular Song</h4>
+                <h4>Popular Songs</h4>
                 <div class="btn_s">
                     <i id="left_scroll" class="bi bi-arrow-left-short"></i>
                     <i id="right_scroll" class="bi bi-arrow-right-short"></i>
@@ -128,8 +131,10 @@
                         <i class="bi playListPlay bi-play-circle-fill" id="7"></i>
                     </div>
                     <h5>Koca Yaşlı Şişko Dünya
+                       
                         <br>
                         <div class="subtitle">Adamlar</div>
+                        
                     </h5>
                 </li>
                 <li class="songItem">
